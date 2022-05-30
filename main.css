@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+==================
+variables
+=================
+*/
+
+:root {
+  /***** colors *****/
+  --pri__gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  --neut__pale-blue: hsl(243, 100%, 93%);
+  --neut__grayish-blue: hsl(229, 7%, 55%);
+  --neut__dark-blue: hsl(228, 56%, 26%);
+  --neut__vdk-blue: hsl(229, 57%, 11%);
+
+  /***** fonts *****/
+  --ff: "Raleway", sans-serif;
+  --fs: 14px;
+}
+
+/*
+==================
+global elements
+=================
+*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url(./images/bg-desktop.png) no-repeat;
+  background-position: bottom -35% left;
+  background-size: contain;
+  background-color: var(--neut__vdk-blue);
+  font-family: var(--ff);
+}
+
+img {
+  max-width: 100%;
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+/*
+==================
+global classes
+=================
+*/
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 55vw;
+}
+
+.data-section {
+  width: 40%;
+  background: var(--neut__dark-blue);
+  margin-right: 2rem;
+  padding: 2rem;
+  border-radius: 0.6rem 6rem 0.6rem 0.6rem;
+}
+
+.data-icon-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-wrapper {
+  background: var(--neut__vdk-blue);
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  border-radius: 0.7rem;
+}
+
+.analytics-section {
+  width: 60%;
+  background: var(--neut__dark-blue);
+  padding: 2rem;
+  border-radius: 0.6rem;
+  margin-top: auto;
+  color: var(--neut__pale-blue);
+  position: relative;
+}
+
+.warning-wrapper {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.chat {
+  width: 120px;
+  height: 60px;
+  background: white;
+  position: absolute;
+  top: -25%;
+  right: 6.5%;
+  color: var(--neut__vdk-blue);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.chat span {
+  font-size: 0.6rem;
+  color: var(--neut__grayish-blue);
+  text-transform: uppercase;
+  padding-top: 2px;
+  margin-left: 0.5rem;
+}
+
+.chat::after {
+  content: "";
+  height: 20px;
+  width: 30px;
+  background: white;
+  position: absolute;
+  top: 70%;
+  right: 0;
+  transform: skew(180deg, 34deg);
+}
+
+.progress-bar-wrapper {
+  background: var(--neut__vdk-blue);
+  width: 100%;
+  height: 15px;
+  margin: 0.6rem 0 0.3rem 0;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 80%;
+  height: 80%;
+  background: linear-gradient(45deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  margin-left: 0.1rem;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.progress-bar div {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: white;
+  margin-left: 0.1rem;
+  border-radius: 0.4rem;
+  border-radius: 50%;
+}
+
+.analytics-section div:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+/* .analytics-section > p {
+  font-size: 0.9rem;
+} */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--neut__grayish-blue);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.attribution a {
+  color: hsl(335, 100%, 65%);
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    background: url(./images/bg-mobile.png) no-repeat;
+    background-position: bottom 0 center;
+    background-size: cover;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    padding: 2rem;
+  }
+  .data-section {
+    width: 100%;
+    margin-right: 0;
+    padding: 2rem;
+  }
+  .analytics-section {
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    height: 150px;
+  }
+  .chat {
+    position: absolute;
+    bottom: 0;
+    right: 25%;
+    top: 75%;
+    min-width: 180px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  .chat::after {
+    content: "";
+    display: none;
+  }
+  .chat span {
+    font-size: 0.8rem;
+    color: var(--neut__grayish-blue);
+    padding-top: 0.3rem;
+  }
+  .warning-wrapper > p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .analytics-section div:nth-child(3) {
+    font-weight: 700;
+  }
+  footer {
+    margin-top: 3rem;
+  }
+}
